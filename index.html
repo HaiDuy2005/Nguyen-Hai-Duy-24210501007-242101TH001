@@ -1,0 +1,332 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Academy</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+    background:#f5f5f5;
+}
+
+.page{
+    display:none;
+}
+
+.active-page{
+    display:block;
+}
+
+.card{
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+footer{
+    margin-top:40px;
+}
+</style>
+
+</head>
+<body>
+<img src="https://vtiacademy.edu.vn/upload/images/z4529351865701-0e57eb2943cd47a27011b1d6b4ba38a1.jpg" alt="ảnh minh họa"
+width="250"
+>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+
+<a class="navbar-brand fw-bold" href="#">
+Code Academy
+</a>
+
+<div class="navbar-nav ms-auto">
+<a class="nav-link text-white" href="#" onclick="showPage('home')">Trang Chủ</a>
+<a class="nav-link text-white" href="#" onclick="showPage('courses')">Khóa Học</a>
+<a class="nav-link text-white" href="#" onclick="showPage('register')">Đăng Ký</a>
+<a class="nav-link text-white" href="#" onclick="showPage('list')">Danh Sách</a>
+</div>
+
+</div>
+</nav>
+
+<!-- TRANG CHỦ -->
+<div id="home" class="page active-page">
+
+<div class="container text-center py-5">
+
+<h1>Website Đăng Ký Khóa Học</h1>
+
+<p>
+Giúp sinh viên xem và đăng ký khóa học trực tuyến.
+</p>
+
+<button class="btn btn-primary"
+onclick="showPage('courses')">
+Xem Khóa Học
+</button>
+
+</div>
+
+</div>
+
+<!-- KHÓA HỌC -->
+<div id="courses" class="page">
+
+<div class="container py-5">
+
+<h2 class="text-center mb-4">
+Danh Sách Khóa Học
+</h2>
+
+<div class="row">
+
+<div class="col-md-3 mb-3">
+<div class="card">
+<div class="card-body">
+<h5>HTML & CSS</h5>
+<p>Thiết kế giao diện website.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-3">
+<div class="card">
+<div class="card-body">
+<h5>JavaScript</h5>
+<p>Tạo website tương tác.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-3">
+<div class="card">
+<div class="card-body">
+<h5>Bootstrap</h5>
+<p>Thiết kế giao diện nhanh.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-3">
+<div class="card">
+<div class="card-body">
+<h5>PHP</h5>
+<p>Lập trình backend.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-3">
+<div class="card">
+<div class="card-body">
+<h5>MySQL</h5>
+<p>Quản lý cơ sở dữ liệu.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-3">
+<div class="card">
+<div class="card-body">
+<h5>Python</h5>
+<p>Ngôn ngữ lập trình phổ biến.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-3">
+<div class="card">
+<div class="card-body">
+<h5>ReactJS</h5>
+<p>Xây dựng giao diện hiện đại.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-3">
+<div class="card">
+<div class="card-body">
+<h5>NodeJS</h5>
+<p>Xây dựng API và server.</p>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ĐĂNG KÝ -->
+<div id="register" class="page">
+
+<div class="container py-5">
+
+<h2>Đăng Ký Khóa Học</h2>
+
+<form id="registerForm">
+
+<div class="mb-3">
+<label>Họ tên</label>
+<input
+type="text"
+id="name"
+class="form-control"
+required>
+</div>
+
+<div class="mb-3">
+<label>Email</label>
+<input
+type="email"
+id="email"
+class="form-control"
+required>
+</div>
+
+<div class="mb-3">
+<label>Khóa học</label>
+
+<select id="course" class="form-select">
+
+<option>HTML & CSS</option>
+<option>JavaScript</option>
+<option>Bootstrap</option>
+<option>PHP</option>
+<option>MySQL</option>
+<option>Python</option>
+<option>ReactJS</option>
+<option>NodeJS</option>
+
+</select>
+
+</div>
+
+<button class="btn btn-success">
+Đăng Ký
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<!-- DANH SÁCH -->
+<div id="list" class="page">
+
+<div class="container py-5">
+
+<h2>Danh Sách Đăng Ký</h2>
+
+<table class="table table-bordered">
+
+<thead>
+<tr>
+<th>Họ tên</th>
+<th>Email</th>
+<th>Khóa học</th>
+</tr>
+</thead>
+
+<tbody id="tableData">
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<footer class="bg-dark text-white text-center p-2">
+
+<p style="margin-top:50px;">Họ tên: Nguyễn Hải Duy</p>
+<p>MSSV: 24210501007</p>
+
+</footer>
+
+
+<script>
+
+function showPage(page){
+
+document.querySelectorAll(".page")
+.forEach(p=>{
+p.classList.remove("active-page");
+});
+
+document.getElementById(page)
+.classList.add("active-page");
+
+if(page==="list"){
+loadTable();
+}
+
+}
+
+document
+.getElementById("registerForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const student={
+name:document.getElementById("name").value,
+email:document.getElementById("email").value,
+course:document.getElementById("course").value
+};
+
+let data=
+JSON.parse(localStorage.getItem("students"))
+|| [];
+
+data.push(student);
+
+localStorage.setItem(
+"students",
+JSON.stringify(data)
+);
+
+alert("Đăng ký thành công");
+
+this.reset();
+
+});
+
+function loadTable(){
+
+let data=
+JSON.parse(localStorage.getItem("students"))
+|| [];
+
+let html="";
+
+for(let i=0;i<data.length;i++){
+
+html+=`
+<tr>
+<td>${data[i].name}</td>
+<td>${data[i].email}</td>
+<td>${data[i].course}</td>
+</tr>
+`;
+
+}
+
+document.getElementById("tableData")
+.innerHTML=html;
+
+}
+
+</script>
+
+</body>
+</html>
+```
