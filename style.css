@@ -1,0 +1,52 @@
+
+body{
+    background:#f4f6f9;
+    font-family:Arial, sans-serif;
+}
+
+.hero{
+    padding:60px 0;
+    text-align:center;
+}
+
+.hero img{
+    max-width:600px;
+    border-radius:10px;
+}
+
+.course-card{
+    transition:0.3s;
+    height:100%;
+}
+
+.course-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card img{
+    height:200px;
+    object-fit:cover;
+}
+
+footer{
+    margin-top:50px;
+}
+
+.search-box{
+    margin-bottom:20px;
+}
+
+.table{
+    background:white;
+}
+
+.modal-body img{
+    width:100%;
+    border-radius:8px;
+}
+
+.student-info{
+    font-size:14px;
+}
+
